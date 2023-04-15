@@ -2,7 +2,6 @@ import itertools
 modes=[]
 import tkinter.filedialog as fd
 import tkinter as tk
-print('CLOSE THIS WINDOW AND THE PROGRAM WILL SHUT DOWN!!!')
 window = tk.Tk()
 window.title("CRYPT")
 
