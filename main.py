@@ -1,18 +1,18 @@
-import itertools
-modes=[]
-import tkinter.filedialog as fd
 import tkinter as tk
+import tkinter.filedialog as fd
+import itertools
+modes = []
 window = tk.Tk()
 window.title("CRYPT")
 
 fh = tk.Frame(window)
 fh.pack(side="top", fill="both", expand=True)
-for r,p in enumerate(['File','Key']):
+for r, p in enumerate(['File', 'Key']):
     tk.Label(fh, text=p).grid(
         row=r, column=0, ipadx=5, ipady=5)
 
 
-def get_path():fd.askopenfilename()
+def get_path(): fd.askopenfilename()
 
 
 for i in range(2):
