@@ -1,24 +1,21 @@
 import tkinter as tk
 import tkinter.filedialog as fd
-import itertools
-modes = []
+import Crypto
+fp = ['File', 'Key', 'IV']
+fh = dict()
+pa = dict()
+ge = dict()
 window = tk.Tk()
 window.title("CRYPT")
 
-fh = tk.Frame(window)
-fh.pack(side="top", fill="both", expand=True)
-fp=['File', 'Key','IV']
 for r, p in enumerate(fp):
-    tk.Label(fh, text=p).grid(
-        row=r, column=0, ipadx=5, ipady=5)
-pa=dict()
-
-# for fo in files:
-#     button = tk.Button(fo, text="Open",
-#                        command=fd.askopenfilename)
-#     button.pack(side="right", padx=5, pady=5)
-#     label = tk.Label(fo,justify="left",anchor='w',
-#                      text="1234567890-=qwertyuiopasdfghjklzxcvbnm")
-#     label.pack(side="left", padx=5,fill='both',expand=True)
+    fh[p] = tk.Frame(window)
+    fh[p].pack(side="top", fill="x", padx=5, pady=5)
+    tk.Label(fh[p], text=p).pack(side="left", padx=5, pady=5)
+    pa[p] = tk.Label(fh[p], text='No file yet.')
+    pa[p].pack(side="left", padx=5, pady=5)
+    ge[p] = (lambda: pa[p].configure(text=fd.askopenfilename()))
+    tk.Button(fh[p], text="Open", command=ge[p]).pack(
+        side="right", padx=5, pady=5)
 
 window.mainloop()
