@@ -7,16 +7,12 @@ window.title("CRYPT")
 
 fh = tk.Frame(window)
 fh.pack(side="top", fill="both", expand=True)
-for r, p in enumerate(['File', 'Key']):
+fp=['File', 'Key','IV']
+for r, p in enumerate(fp):
     tk.Label(fh, text=p).grid(
         row=r, column=0, ipadx=5, ipady=5)
+pa=dict()
 
-
-def get_path(): fd.askopenfilename()
-
-
-for i in range(2):
-    pass
 # for fo in files:
 #     button = tk.Button(fo, text="Open",
 #                        command=fd.askopenfilename)
