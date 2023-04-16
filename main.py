@@ -1,6 +1,6 @@
 import tkinter as tk
 import tkinter.filedialog as fd
-import Crypto
+import __en
 fp = ['File', 'Key', 'IV']
 fh = dict()
 pa = dict()
